@@ -492,11 +492,20 @@ resetBtn.addEventListener('click', () => {
 document.getElementById('online-btn').addEventListener('click', () => {
     const btn = document.getElementById('online-btn');
     if (isOnline) return;
-
     btn.textContent = "Connecting...";
 
-    // Connect to local server (Make sure server.js is running)
-    socket = io('http://localhost:3000');
+    // Get backend URL from environment or use default for development
+    const isDev = import.meta.env.DEV;
+    const backendUrl = isDev 
+        ? 'http://localhost:3000'
+        : import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+    
+    socket = io(backendUrl, {
+        reconnection: true,
+        reconnectionDelay: 1000,
+        reconnectionDelayMax: 5000,
+        reconnectionAttempts: 5
+    });
 
     socket.on('connect', () => {
         btn.textContent = "Searching...";
