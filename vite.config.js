@@ -7,6 +7,10 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'terser',
+    terserOptions: {
+      compress: true,
+      mangle: true
+    },
     rollupOptions: {
       output: {
         manualChunks: undefined,
