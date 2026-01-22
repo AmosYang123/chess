@@ -1,0 +1,21 @@
+{
+    "name": "chess-local",
+    "version": "1.0.0",
+    "description": "Local Chess Web App",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "express": "^5.2.1",
+        "socket.io": "^4.8.3",
+        "socket.io-client": "^4.8.3"
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Chess</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+    <button id="online-btn" class="btn top-left-btn">Online Play</button>
+    <div class="game-info">
+      <h1>Chess</h1>
+      <div class="status" id="status">White to Move</div>
+      <div class="timers">
+        <!-- Placeholder for timers if needed later -->
+      </div>
+    </div>
+
+    <div class="board-container">
+      <div id="chess-board" class="chess-board"></div>
+    </div>
+
+    <div class="controls">
+      <button id="flip-btn" class="btn">Flip Board</button>
+      <button id="reset-btn" class="btn secondary">Reset Game</button>
+    </div>
+
+    <div id="check-alert" class="check-alert hidden">Check!</div>
+
+    <!-- Promotion Modal -->
+    <div id="promotion-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Choose Promotion</h2>
+        <div class="promotion-options">
+          <div data-type="queen" class="promo-option">Queen</div>
+          <div data-type="rook" class="promo-option">Rook</div>
+          <div data-type="bishop" class="promo-option">Bishop</div>
+          <div data-type="knight" class="promo-option">Knight</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
