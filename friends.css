@@ -1,0 +1,155 @@
+/* Friends Page Styles - Deep Space Glass */
+
+.friends-container {
+    width: 100%;
+    max-width: 900px;
+    padding: var(--space-5);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.friends-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.friends-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #fff, #cbd5e1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.friends-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.friend-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.friend-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.friend-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.friend-card:hover::before {
+    opacity: 1;
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.friend-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #333, #111);
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Status dots */
+.friend-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #1a1b26;
+    /* Matches bg roughly */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.friend-avatar.online {
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.friend-avatar.online::after {
+    background-color: var(--success);
+    box-shadow: 0 0 10px var(--success);
+}
+
+.friend-avatar.away {
+    border-color: rgba(250, 204, 21, 0.3);
+}
+
+.friend-avatar.away::after {
+    background-color: var(--warning);
+    box-shadow: 0 0 10px var(--warning);
+}
+
+.friend-details h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.friend-details .stats {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.friend-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.online {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.status-badge.offline {
+    background: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
